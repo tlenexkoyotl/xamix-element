@@ -1,0 +1,26 @@
+{
+  "name": "@catsys/xamix-element",
+  "version": "1.0.0",
+  "description": "Catsys component generated",
+  "main": "xamix-element.js",
+  "keywords": [
+    "lit-element",
+    "component"
+  ],
+  "author": "autogenered <hello@catsys.com>",
+  "license": "MIT",
+  "scripts": {
+    "karma": "karma",
+    "test": "karma start"
+  },
+  "dependencies": {
+    "@types/fs-extra": "^8.1.0",
+    "@types/node": "^13.7.6",
+    "fs-extra": "^8.1.0",
+    "lit-element": "^2.0.0"
+  },
+  "devDependencies": {
+    "@open-wc/testing": "^0.9.11",
+    "@open-wc/testing-karma": "^0.4.7"
+  }
+}
