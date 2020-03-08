@@ -27,24 +27,13 @@ export default css`
 
 div.columns > div {
   display: table-cell;
-  width: 50%;
 }
 
 .horizontal {
   direction: rtl;
-  padding-right: 10px;
-}
-
-svg {
-  fill: #000000;
-}
-
-svg.space {
-  fill: #ffffff;
 }
 
 .vertical {
-  padding-top: 10px;
   direction: ltr;
   -webkit-writing-mode: vertical-rl;
   -moz-writing-mode: vertical-rl;
