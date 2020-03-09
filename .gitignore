@@ -13,3 +13,4 @@ components
 # validator
 coverage*
 .idea/
+dist/
