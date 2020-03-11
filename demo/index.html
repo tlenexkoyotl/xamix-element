@@ -7,7 +7,7 @@
   <script type="module">
       import '../xamix-element.js';
   </script>
-  <title>XamixElement</title>
+  <title>Malinzin Itla'tol</title>
 </head>
 <body>
 <style>
@@ -20,16 +20,9 @@
     font-family: Arial;
   }
 
-  .hidden {
-    display: none;
-  }
-
   div.columns > div {
     display: table-cell;
-  }
-
-  div.columns > div:last-child {
-    width: 53%;
+    width: 50vw;
   }
 
   .columns > * {
@@ -37,95 +30,73 @@
   }
 
   xamix-element > span {
-    font-size: 1%;
+    font-size: 1vw;
     vertical-align: top;
   }
 
   .top > * {
     vertical-align: top;
   }
+
+  .header {
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  div.columns.header {
+    max-width: 10vw;
+  }
+
+  div.columns.top.body {
+    max-width: 10vw;
+  }
+
+  div.body.horizontal > xamix-element {
+    margin-bottom: 2vw;
+  }
+
+  div.body.columns xamix-element {
+    margin-left: 2vw;
+  }
 </style>
 <div class="card">
   <div class="columns top">
     <div class="columns top">
-      <div class="columns top">
+      <div class="columns header">
         <xamix-element class="title" root=".." vertical
-                       textInput="m_a l__i__n z__i__n _ i tl_a' t__o__l"></xamix-element>
-        <xamix-element class="author" root=".." vertical
-                       textInput="r_e f__u__kh y_o _ n_a v_a _ n_a v_a"></xamix-element>
+                       textInput="ma-lin-zin _ i-tla'-tol"></xamix-element>
+        <xamix-element class="top author" root=".." vertical
+                       textInput="re-fukh-yo _ na-va _ na-va"></xamix-element>
       </div>
       <div class="columns top body">
         <xamix-element root=".." vertical
-                       textInput="i k_a _ i n__i__n _ a m__o__x tl_i _ t__i__k p_e w__a__l t_i a' _ s_e _ w_e y_i"></xamix-element>
+                       textInput="i-ka _ i-nin _ a-mox-tli _ tik-pe-wal-ti-a' _ se _ we-yi _ a-mox-me-ka-yo-te-kitl _ i-to-ka' _ to-tla'-tol-_-tlamilistli-_ in _ sen-tetl _ a-mox-tli _ o-ki'-qi-lo' _ re-fukh-yo _ na-va _ na-va-_-tlamilistli-_ i-pan _ i-a-mox _ ye' _ ki-te-tla-po-wi-a _ i-ka _ tlax-kal-tlan _ na-wa-tla'-tol _ se-kin _ tla-man-tli _ tlen _ kin-pak-tis _ in _ ko-ne-zi-zin _ wan _ no-yo-ki _ in _ we-we-zi-zin-_-tlamilistli-_ i-nik _ o-mo-ciw _ i-nin _ te-kitl _ o-mo-sen-tla-li'-ke' _ in _ tla'-tol tla-mat-ke' _ tlen _ te-ki-ti' _ i-pan _ we-yi _ te-mac-til-kal-me' _ me!-xi'-ko _ wan _ po-lo!n-ya-_-tlamilistli-_ i-nin-ke' _ te-mac-ti'-ke' _ ki-ne-ki' _ tla-pa-le-wis-ke' _ i-nik _ in _ na-watl _ a'-mo _ mo-mi-ki-lis-_-zikoalistli1-_ ok-se-pa _ wel _ mo-ka-kis-_-tlamilistli"></xamix-element>
         <xamix-element root=".." vertical
-                       textInput="_ a m__o__x m_e k_a y_o t_e k__i__tl _ i t_o k_a' _ t_o tl_a' t__o__l _ tlamilistli"></xamix-element>
+                       textInput="i-pan _ i-nin _ a-mox-me-ka-yotl _ tik-ten-kix-tis-ke' _ no-ci _ in _ tlen _ in _ na-wa-tla'-tol-ke' _ ki-i'-qi-los-ke'-_-tlamilistli-_ a'-mo _ tik-ten-kix-tis-ke' _ san _ yen _ in _ tla-man-tli _ tlen _ kin-pak-ti-a _ in _ ko-ne-zi-zin-_-zikoalistli1-_ no-yo-ki _ ok-se-kin _ a-ma-me' _ tlen _ kin-po-was-ke' _ in _ zo-wa-zi-zin _ wan _ in _ tla-ka-zi-zin-_-tlamilistli-_ yo-kon _ ti-kil-wi-kix-tis-ke' _ i-nin _ tla'-tol-_-tlamilistli"></xamix-element>
         <xamix-element root=".." vertical
-                       textInput="_ i__n _ s__e__n t__e__tl _ a m__o__x tl_i _ o k_i' q_i l_o' _ r_e f__u__kh y_o _ n_a v_a _"></xamix-element>
+                       textInput="ti-nen-pa-ki' _ pam-pa _ i-nin _ a-mox-me-ka-yotl _ tik-pe-wal-ti-a' _ i-ka _ i-a-mox _ re-fukh-yo _ na-va-_-tlamilistli-_ ye' _ qal-li _ ki-a'-si'-ka-ma-ti _ in _ i-min-tla'-tol _ wan _ i-min-ne-mi-lis _ in _ a-ki'-ke' _ ki-yo-li-ti-a' _ in _ na-wa-tla'-tol-_-tlamilistli-_ i-nin _ te-mac-ti'-ka-zin _ mo-te-ki-til-ti-a _ i-nik _ a'-mo _ po-li-wis _ in _ na-watl _ pam-pa _ i-nin _ tla'-tol-zin _ ki-nel-wa-yo-ti-a _ i-nin _ tlal-li _ wan _ ki-ix-ma-ti' _ ik _ no-ci _ in _ se-ma-na-wak-_-tlamilistli"></xamix-element>
         <xamix-element root=".." vertical
-                       textInput="_ n_a v_a _ tlamilistli _ i p__a__n _ i a m__o__x _ y_e' _ k_i t_e tl_a p_o w_i a"></xamix-element>
-        <xamix-element root=".." vertical
-                       textInput="_ i k_a _ tl__a__x k_a l__a__n _ n_a w_a tl_a' t__o__l _ s_e k__i__n _ tl_a m__a__n tl_i"></xamix-element>
-        <xamix-element root=".." vertical
-                       textInput="_ tl__e__n _ k__i__n p__a__k t__i__s _ i__n _ k_o n__e__n z_i z__i__n _ w__a__n _ n_o y_o k_i"></xamix-element>
-        <xamix-element root=".." vertical
-                       textInput="_ i__n _ w_e w_e z_i z__i__n _ tlamilistli _ i n__i__k _ o m_o c__i__w _ i n__i__n"></xamix-element>
-        <xamix-element root=".." vertical
-                       textInput="_ t_e k__i__tl _ o m_o s__e__n tl_a l_i' k_e' i__n _ tl_a' t__o__l tl_a m__a__t k_e' _ tl__e__n"></xamix-element>
-        <xamix-element root=".." vertical
-                       textInput="_ t_e k_i t_i' _ i p__a__n _ w_e y_i _ t_e m__a__c t__i__l k__a__l m_e' _ m_e! x_i' k_o"></xamix-element>
-        <xamix-element root=".." vertical
-                       textInput="_ w__a__n _ p_o l__o__!_n y_a _ tlamilistli _ i n__i__n k_e' _ t_e m__a__c t_i' k_e' _ k_i n_e k_i'"></xamix-element>
-        <xamix-element root=".." vertical
-                       textInput="_ tl_a p_a l_e w__i__s k_e' _ i n__i__k _ i__n _ n_a w__a__tl _ a' m_o"></xamix-element>
-        <xamix-element root=".." vertical
-                       textInput="_ m_o m_i k_i l__i__s _ zikoalistli1 _ o__k s_e p_a _ w__e__l _ m_o k_a k__i__s _ tlamilistli"></xamix-element>
-        <xamix-element root=".." vertical
-                       textInput="i p__a__n _ i n__i__n _ a m__o__x m_e k_a y__o__tl _ t__i__k t__e__n k__i__x t__i__s k_e' _ n_o c_i"></xamix-element>
-        <xamix-element root=".." vertical
-                       textInput="_ i__n _ tl__e__n _ i__n _ n_a w_a tl_a' t__o__l k_e' _ k_i i' q_i l__o__s k_e' _ tlamilistli"></xamix-element>
-        <xamix-element root=".." vertical
-                       textInput="_ a' m_o _ t__i__k t__e__n k__i__x t__i__s k_e' _ s__a__n _ y__e__n _ i__n _ tl_a m__a__n tl_i"></xamix-element>
-        <xamix-element root=".." vertical
-                       textInput="_ tl__e__n _ k__i__n p__a__k t_i a _ i__n _ k_o n__e__n z_i z__i__n _ zikoalistli1 _ n_o y_o k_i"></xamix-element>
-        <xamix-element root=".." vertical
-                       textInput="_ o__k s_e k__i__n _ a m_a m_e' _ tl__e__n _ k__i__n p_o w__a__s k_e' _ i__n"></xamix-element>
-        <xamix-element root=".." vertical
-                       textInput="_ z_o w_a z_i z__i__n _ w__a__n _ i__n _ tl_a k_a z_i z__i__n _ tlamilistli"></xamix-element>
-        <xamix-element root=".." vertical
-                       textInput="_ y_o k__o__n _ t_i k__i__l w_i k__i__x t__i__s k_e' _ i n__i__n _ tl_a' t__o__l _ tlamilistli"></xamix-element>
-        <xamix-element root=".." vertical
-                       textInput="t_i n__e__n p_a k_i' _ p__a__m p_a _ i n__i__n _ a m__o__x m_e k_a y__o__tl _ nimanilistli"></xamix-element>
+                       textInput="i-min-tla'-tol-zin _ tlax-kal-tlan-tla-ka' _ yo-we-kaw-_-tlamilistli-_ a'-mo _ yan-qik-_-zikoalistli1-_ a'-mo _ ye-kin _ o-pew-_-tlamilistli-_ i-min-tla-ix-tla-ma-ci-lis _ ni-kan _ yo-qe-pon-ti-ye-ya _ i'-qak _ a-ye-mo _ o-wal-la-ya' _ in _ we'-ka-ca-ne-ke'-_-tlamilistli-_ i-pan _ in _ a-mox-me-ka-yotl _ i-to-ka' _ to-tla'-tol _ ti-ki'-qi-lo-a' _ yo-kon _ ke-me _ o-tla'-qi-lo-lis-tli-_-zikoalistli1-_ no-yo-ki _ o-ti-kan-ke' _ in _ tlen _ ax-kan _ yo-te-mac-ti'-ke' _ in _ yan-qik _ tla-ma-tin-me'-_-tlamilistli-_"></xamix-element>
       </div>
     </div>
-    <div>
-      <div>
+    <div class="container">
+      <div class="header">
         <xamix-element class="title" root=".."
-                       textInput="m_a l__i__n z__i__n _ i tl_a' t__o__l"></xamix-element>
+                       textInput="ma-lin-zin _ i-tla'-tol"></xamix-element>
         <br>
         <xamix-element class="author" root=".."
-                       textInput="r_e f__u__kh y_o _ n_a v_a _ n_a v_a"></xamix-element>
+                       textInput="re-fukh-yo _ na-va _ na-va"></xamix-element>
         <br>
       </div>
-      <div class="body">
+      <div class="body horizontal">
         <xamix-element root=".."
-                       textInput="i k_a _ i n__i__n _ a m__o__x tl_i _ t__i__k p_e w__a__l t_i a' _ s_e _ w_e y_i _ a m__o__x m_e k_a y_o t_e k__i__tl _ i t_o k_a' _ t_o tl_a' t__o__l _ tlamilistli _ i__n _ s__e__n t__e__tl _ a m__o__x tl_i _ o k_i' q_i l_o'"></xamix-element>
+                       textInput="i-ka _ i-nin _ a-mox-tli _ tik-pe-wal-ti-a' _ se _ we-yi _ a-mox-me-ka-yo-te-kitl _ i-to-ka' _ to-tla'-tol-_-tlamilistli-_ in _ sen-tetl _ a-mox-tli _ o-ki'-qi-lo' _ re-fukh-yo _ na-va _ na-va-_-tlamilistli-_ i-pan _ i-a-mox _ ye' _ ki-te-tla-po-wi-a _ i-ka _ tlax-kal-tlan _ na-wa-tla'-tol _ se-kin _ tla-man-tli _ tlen _ kin-pak-tis _ in _ ko-ne-zi-zin _ wan _ no-yo-ki _ in _ we-we-zi-zin-_-tlamilistli-_ i-nik _ o-mo-ciw _ i-nin _ te-kitl _ o-mo-sen-tla-li'-ke' _ in _ tla'-tol tla-mat-ke' _ tlen _ te-ki-ti' _ i-pan _ we-yi _ te-mac-til-kal-me' _ me!-xi'-ko _ wan _ po-lo!n-ya-_-tlamilistli-_ i-nin-ke' _ te-mac-ti'-ke' _ ki-ne-ki' _ tla-pa-le-wis-ke' _ i-nik _ in _ na-watl _ a'-mo _ mo-mi-ki-lis-_-zikoalistli1-_ ok-se-pa _ wel _ mo-ka-kis-_-tlamilistli"></xamix-element>
         <xamix-element root=".."
-                       textInput="_ r_e f__u__kh y_o _ n_a v_a _ n_a v_a _ tlamilistli _ i p__a__n _ i a m__o__x _ y_e' _ k_i t_e tl_a p_o w_i a _ i k_a _ tl__a__x k_a l__a__n _ n_a w_a tl_a' t__o__l _ s_e k__i__n _ tl_a m__a__n tl_i _ tl__e__n _ k__i__n p__a__k t__i__s _ i__n"></xamix-element>
+                       textInput="i-pan _ i-nin _ a-mox-me-ka-yotl _ tik-ten-kix-tis-ke' _ no-ci _ in _ tlen _ in _ na-wa-tla'-tol-ke' _ ki-i'-qi-los-ke'-_-tlamilistli-_ a'-mo _ tik-ten-kix-tis-ke' _ san _ yen _ in _ tla-man-tli _ tlen _ kin-pak-ti-a _ in _ ko-ne-zi-zin-_-zikoalistli1-_ no-yo-ki _ ok-se-kin _ a-ma-me' _ tlen _ kin-po-was-ke' _ in _ zo-wa-zi-zin _ wan _ in _ tla-ka-zi-zin-_-tlamilistli-_ yo-kon _ ti-kil-wi-kix-tis-ke' _ i-nin _ tla'-tol-_-tlamilistli"></xamix-element>
         <xamix-element root=".."
-                       textInput="_ k_o n__e__n z_i z__i__n _   w__a__n _ n_o y_o k_i _ i__n _ w_e w_e z_i z__i__n _ tlamilistli _ i n__i__k _ o m_o c__i__w _ i n__i__n _ t_e k__i__tl _ o m_o s__e__n tl_a l_i' k_e' _ i__n _ tl_a' t__o__l tl_a m__a__t k_e' _ tl__e__n _ t_e k_i t_i'"></xamix-element>
+                       textInput="ti-nen-pa-ki' _ pam-pa _ i-nin _ a-mox-me-ka-yotl _ tik-pe-wal-ti-a' _ i-ka _ i-a-mox _ re-fukh-yo _ na-va-_-tlamilistli-_ ye' _ qal-li _ ki-a'-si'-ka-ma-ti _ in _ i-min-tla'-tol _ wan _ i-min-ne-mi-lis _ in _ a-ki'-ke' _ ki-yo-li-ti-a' _ in _ na-wa-tla'-tol-_-tlamilistli-_ i-nin _ te-mac-ti'-ka-zin _ mo-te-ki-til-ti-a _ i-nik _ a'-mo _ po-li-wis _ in _ na-watl _ pam-pa _ i-nin _ tla'-tol-zin _ ki-nel-wa-yo-ti-a _ i-nin _ tlal-li _ wan _ ki-ix-ma-ti' _ ik _ no-ci _ in _ se-ma-na-wak-_-tlamilistli"></xamix-element>
         <xamix-element root=".."
-                       textInput="_ i p__a__n _ w_e y_i _ t_e m__a__c t__i__l k__a__l m_e' _ m_e! x_i' k_o _ w__a__n _ p_o l__o__!_n y_a _ tlamilistli _ i n__i__n k_e' _ t_e m__a__c t_i' k_e' _ k_i n_e k_i' _ tl_a p_a l_e w__i__s k_e' _ i n__i__k _ i__n _ n_a w__a__tl"></xamix-element>
-        <xamix-element root=".."
-                       textInput="_ a' m_o _ m_o m_i k_i l__i__s _ zikoalistli1 _ o__k s_e p_a _ w__e__l _ m_o k_a k__i__s _ tlamilistli"></xamix-element>
-        <xamix-element root=".."
-                       textInput="i p__a__n _ i n__i__n _ a m__o__x m_e k_a y__o__tl _ t__i__k t__e__n k__i__x t__i__s k_e' _ n_o c_i _ i__n _ tl__e__n _ i__n _ n_a w_a tl_a' t__o__l k_e' _ k_i i' q_i l__o__s k_e' _ tlamilistli _ a' m_o _ t__i__k t__e__n k__i__x t__i__s k_e' _ s__a__n _ y__e__n _ i__n"></xamix-element>
-        <xamix-element root=".."
-                       textInput="_ tl_a m__a__n tl_i _ tl__e__n _ k__i__n p__a__k t_i a _ i__n _ k_o n_e z_i z__i__n _ zikoalistli1 _ n_o y_o k_i _ o__k s_e k__i__n _ a m_a m_e' _ tl__e__n _ k__i__n p_o w__a__s k_e' _ i__n _ z_o w_a z_i z__i__n _ w__a__n _ i__n _ tl_a k_a z_i z__i__n _ tlamilistli"></xamix-element>
-        <xamix-element root=".."
-                       textInput="_ y_o k__o__n _ t_i k__i__l w_i k__i__x t__i__s k_e' _ i n__i__n _ tl_a' t__o__l _ tlamilistli"></xamix-element>
-        <br>
-        <xamix-element root=".."
-                       textInput="t_i n__e__n p_a k_i' _ p__a__m p_a _ i n__i__n _ a m__o__x m_e k_a y__o__tl _ nimanilistli"></xamix-element>
+                       textInput="i-min-tla'-tol-zin _ tlax-kal-tlan-tla-ka' _ yo-we-kaw-_-tlamilistli-_ a'-mo _ yan-qik-_-zikoalistli1-_ a'-mo _ ye-kin _ o-pew-_-tlamilistli-_ i-min-tla-ix-tla-ma-ci-lis _ ni-kan _ yo-qe-pon-ti-ye-ya _ i'-qak _ a-ye-mo _ o-wal-la-ya' _ in _ we'-ka-ca-ne-ke'-_-tlamilistli-_ i-pan _ in _ a-mox-me-ka-yotl _ i-to-ka' _ to-tla'-tol _ ti-ki'-qi-lo-a' _ yo-kon _ ke-me _ o-tla'-qi-lo-lis-tli-_-zikoalistli1-_ no-yo-ki _ o-ti-kan-ke' _ in _ tlen _ ax-kan _ yo-te-mac-ti'-ke' _ in _ yan-qik _ tla-ma-tin-me'-_-tlamilistli-_"></xamix-element>
       </div>
     </div>
   </div>
@@ -139,13 +110,13 @@
           xamix.setAttribute('bold', '');
 
       for (const xamix of xamixTitle)
-          xamix.setAttribute('fontSize', '3.75');
+          xamix.setAttribute('fontSize', '3.5');
 
       for (const xamix of xamixAuthor)
-          xamix.setAttribute('fontSize', '2.5');
+          xamix.setAttribute('fontSize', '2.3');
 
       for (const xamix of xamixBody)
-          xamix.setAttribute('fontSize', '1.7');
+          xamix.setAttribute('fontSize', '1.5');
   </script>
 </div>
 </body>
