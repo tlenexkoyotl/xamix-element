@@ -1,4 +1,4 @@
-import {html, LitElement, svg} from 'lit-element';
+import {html, LitElement} from 'lit-element';
 import style from './xamix-element-styles.js';
 
 class XamixElement extends LitElement {
@@ -8,13 +8,12 @@ class XamixElement extends LitElement {
         type: Number,
         reflect: true
       },
-      realFontSize: {type: Number},
-      xOffset: {type: Number},
-      yOffset: {type: Number},
-      widthOffset: {type: Number},
-      heightOffset: {type: Number},
       root: {type: String},
       vertical: {
+        type: Boolean,
+        reflect: true
+      },
+      adaptable: {
         type: Boolean,
         reflect: true
       },
@@ -22,15 +21,16 @@ class XamixElement extends LitElement {
         type: Boolean,
         reflect: true
       },
+      unit: {
+        type: String,
+        reflect: true
+      },
       textInput: {
         type: String,
         reflect: true
       },
-      textOutput: {type: Array},
-      screenWidth: {
-        type: Number,
-        reflect: true
-      }
+      parsedText: {type: Array},
+      textOutput: {type: Array}
     };
   }
 
@@ -40,21 +40,15 @@ class XamixElement extends LitElement {
 
   constructor() {
     super();
+
     this.fontSize = 3;
     this.root = '.';
+    this.adaptable = false;
+    this.vertical = false;
     this.bold = false;
+    this.unit = 'vw';
     this.textOutput = [];
-    this.screenWidth = window.innerWidth;
-
-    this.setFontSize();
-  }
-
-  getSizeFactor() {
-    return this.screenWidth / 100;
-  }
-
-  setFontSize() {
-    this.realFontSize = this.getSizeFactor() * this.fontSize;
+    this.parsedText = [];
   }
 
   setViewBox(svg, viewBox) {
@@ -87,60 +81,114 @@ class XamixElement extends LitElement {
   }
 
   formVerticalViewbox(y, height) {
-    height = height * 1.8;
+    if (height < 40)
+      height = height * 2.3;
+    else if (40 <= height && height < 60)
+      height = height * 2.1;
+    else if (60 <= height && height < 80)
+      height = height * 1.7;
+    else if (80 <= height && height < 90)
+      height = height * 1.6;
+    else if (90 <= height)
+      height = height * 1.5;
 
     return this.formViewbox(0, y, 200, height);
   }
 
+  getAspectRatio() {
+    return window.innerWidth / window.innerHeight
+  }
+
+  getUnit() {
+    if (this.adaptable)
+      return this.getAspectRatio() > 1 ? 'vw' : 'vh';
+    else
+      return this.unit;
+  }
+
   horizontalResize(svg, x, width) {
     this.setViewBox(svg, this.formHorizontalViewbox(x, width));
-    svg.setAttribute('height', this.realFontSize);
+    svg.setAttribute('height', `${this.fontSize}${this.getUnit()}`);
   }
 
   verticalResize(svg, y, height) {
     this.setViewBox(svg, this.formVerticalViewbox(y, height));
-    svg.setAttribute('width', this.realFontSize);
+    svg.setAttribute('width', `${this.fontSize}${this.getUnit()}`);
   }
 
   resizeSvg(svg) {
     const bbox = svg.getBBox();
 
-    if (this.vertical) {
-      const y = bbox.y;
-      const height = bbox.height;
+    if (this.vertical)
+      this.verticalResize(svg, bbox.y, bbox.height);
+    else
+      this.horizontalResize(svg, bbox.x, bbox.width);
+  }
 
-      this.verticalResize(svg, y, height);
-    } else {
-      const x = bbox.x;
-      const width = bbox.width;
+  appendSvg(textOutput, content) {
+    const template = document.createElement('span');
+    template.innerHTML = `${content}`;
 
-      this.horizontalResize(svg, x, width);
+    return [...textOutput, template.children[0]];
+  }
+
+  fetchSvg(fileName) {
+    return fetch(`${this.root}/data/${this.bold ? 'bold' : 'regular'}/${fileName}.svg`,
+      {mode: 'no-cors'})
+      .then(file => file.text())
+  }
+
+  parseText() {
+    for (const text of this.textInput) {
+      const parsedWord = {word: text, syllables: []};
+
+      if (text.includes('-')) {
+        parsedWord.components = text.split('-');
+
+        for (const syllable of parsedWord.components)
+          parsedWord.syllables = [...parsedWord.syllables, this.fetchSvg(syllable)];
+      } else
+        parsedWord.syllables = [this.fetchSvg(text)];
+
+      this.parsedText = [...this.parsedText, parsedWord];
+    }
+  }
+
+  fetchSyllables() {
+    for (const word of this.parsedText)
+      Promise.all(word.syllables)
+        .then(files => {
+          word.textOutput = [];
+          for (const file of files)
+            word.textOutput = this.appendSvg(word.textOutput, file);
+
+          word.content = document.createElement('div');
+
+          for (const syllable of word.textOutput)
+            word.content.appendChild(syllable);
+
+          word.content.classList.toggle('word');
+
+          const contents = this.parsedText.map(word => word.content);
+
+          if (contents.length === this.parsedText.length)
+            for (const word of this.parsedText)
+              this.textOutput = [...this.textOutput, word.content];
+        });
+  }
+
+  convertInput() {
+    if (typeof this.textInput === 'string') {
+      this.textInput = this.textInput.toLowerCase().split(' ');
+      this.parsedText = [];
+
+      this.parseText();
+      this.fetchSyllables();
     }
   }
 
   render() {
-    let promises = [];
-
-    if (typeof this.textInput === 'string') {
-      this.textInput = this.textInput.toLowerCase().split(' ');
-
-      for (const text of this.textInput)
-        promises = [...promises,
-          fetch(`${this.root}/data/${this.bold ? 'bold' : 'regular'}/${text}.svg`,
-            {mode: 'no-cors'})
-            .then(file => file.text())
-        ];
-
-      Promise.all(promises)
-        .then(files => {
-          for (const file of files) {
-            const template = document.createElement('svg');
-            template.innerHTML = `<svg>${file}</svg>`;
-
-            this.textOutput = [...this.textOutput, template.children[0].children[0]];
-          }
-        });
-    }
+    this.convertInput();
 
     const clazz = `text${' ' + (this.vertical ? 'vertical' : 'horizontal')}`;
 
@@ -155,11 +203,6 @@ class XamixElement extends LitElement {
 
   updated(_changedProperties) {
     const svgs = this.shadowRoot.querySelectorAll('svg');
-    const isFontSizeSet = _changedProperties.has('fontSize') ||
-      _changedProperties.has('screenWidth');
-
-    if (isFontSizeSet)
-      this.setFontSize();
 
     for (const svg of svgs)
       this.resizeSvg(svg);
