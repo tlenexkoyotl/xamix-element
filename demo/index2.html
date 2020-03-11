@@ -7,7 +7,7 @@
   <script type="module">
       import '../xamix-element.js';
   </script>
-  <title>XamixElement</title>
+  <title>Tlapowaltin</title>
 </head>
 <body>
 <style>
@@ -26,11 +26,15 @@
   }
 
   .columns > div {
-    padding-left: 2%;
+    padding-left: 2vh;
   }
 
   div#numbers > div.columns > div {
-    width: 25%;
+    width: 20vw;
+  }
+
+  div#numbers > div.columns > div:last-child {
+    width: 30vw;
   }
 
   .columns > * {
@@ -38,17 +42,17 @@
   }
 
   xamix-element > span {
-    font-size: 150%;
-    vertical-align: top;
+    font-size: 2vw;
+    vertical-align: bottom;
   }
 
   xamix-element#numbersHeader, #largeNumbersHeader, #fractionalNumbersHeader, #horizontalGreetingHeader, #verticalGreetingHeader > span {
-    font-size: 170%;
-    vertical-align: top;
+    font-size: 1vw;
+    vertical-align: bottom;
   }
 </style>
 <div class="card">
-  <xamix-element id="numbersHeader" root=".." bold fontSize="5" textInput="tl_a p_o w__a__l t__i__n">
+  <xamix-element id="numbersHeader" root=".." bold fontSize="5" textInput="tla-po-wal-tin">
     <span slot="after">Numbers</span>
   </xamix-element>
   <div id="numbers">
@@ -134,7 +138,7 @@
   <br>
   <div>
     <xamix-element id="largeNumbersHeader" root=".." bold fontSize="5"
-                   textInput="w__e__y tl_a p_o w__a__l t__i__n">
+                   textInput="wey-tla-po-wal-tin">
       <span slot="after">Large Numbers</span>
     </xamix-element>
     <div id="largeNumbers">
@@ -158,7 +162,7 @@
     </div>
     <br>
     <xamix-element id="fractionalNumbersHeader" root=".." bold fontSize="5"
-                   textInput="x_e l__i__w tl_a p_o w__a__l t__i__n">
+                   textInput="xe-liw-tla-po-wal-tin">
       <span slot="after">Fractional Numbers</span>
     </xamix-element>
     <div id="fractionalNumbers">
@@ -177,7 +181,7 @@
   <br>
 
   <xamix-element id="horizontalGreetingHeader" root=".." bold fontSize="5"
-                 textInput="m_o t_e k__a__k tl_a p_a l_o l__i__s tl_i">
+                 textInput="mo-te-kak-tla-pa-lo-lis-tli">
     <span slot="after">Horizontal greeting</span>
   </xamix-element>
   <div id="horizontalGreeting" class="greeting">
@@ -214,7 +218,7 @@
   </div>
   <br>
   <xamix-element id="verticalGreetingHeader" root=".." bold fontSize="5"
-                 textInput="t__e__l k_e z_a k_i tl_a p_a l_o l__i__s tl_i">
+                 textInput="tel-ke-za-ki-tla-pa-lo-lis-tli">
     <span slot="after">Vertical greeting</span>
   </xamix-element>
   <div id="verticalGreeting" class="columns greeting">
@@ -251,68 +255,68 @@
   </div>
   <script>
       const numbers = [
-          'a _ a__k k__i__l i',
-          'm _ m__e__n k__i__l i',
-          'p _ p__e__k k__i__l i',
-          'tl _ tl__a__c k__i__l i',
-          'x _ x__o__s k__i__l i',
-          'z _ z__e__y k__i__l i',
-          'k _ k__o__w k__i__l i',
-          'q _ q__e__y k__i__l i',
-          'l _ l__e__n k__i__l i',
-          'y _ y__o__l k__i__l i',
-          'm a _ m_e m__i__l i',
-          'm m _ m_e m__i__l m_e k__i__l i',
-          'm p _ m_e m__i__l p_e k__i__l i',
-          'm tl _ m_e m_i tl_a k__i__l i',
-          'm x _ m_e m__i__l x_o k__i__l i',
-          'm z _ m_e m__i__l z_e k__i__l i',
-          'm k _ m_e m__i__l k_o k__i__l i',
-          'm q _ m_e m__i__l q_e k__i__l i',
-          'm l _ m_e m__i__l l_e k__i__l i',
-          'm y _ m_e m__i__l y_o k__i__l i',
-          'p a _ p_e m__i__l i',
-          'p m _ p_e m__i__l m_e k__i__l i',
-          'p p _ p_e m__i__l p_e k__i__l i',
-          'tl a _ tl_a m__i__l i',
-          'x a _ x_o m__i__l i',
-          'm a a _ m_e p__e__l i',
-          'm m a _ m_e p__e__l m_e m__i__l i',
-          'm z q _ m_e p__e__l z_e m__i__l q_e k__i__l i',
-          'p a a _ p_e p__e__l i',
-          'tl a a _ tl_a p__e__l i',
-          'tl l x _ tl_a p__e__l l_e m__i__l x_o k__i__l i',
-          'm tlamilistli a a a _ m_e tl__a__l i',
-          'm tlamilistli y m q _ m_e tl__a__l y_o p__e__l m_e m__i__l q_e k__i__l i',
-          'm tlamilistli y z y _ m_e tl__a__l y_o p__e__l z_e m__i__l y_o k__i__l i',
-          'm tlamilistli y y l _ m_e tl__a__l y_o p__e__l y_o m__i__l l_e k__i__l i'
+          'a-_-ak-kil-i',
+          'm-_-men-kil-i',
+          'p-_-pek-kil-i',
+          'tl-_-tlac-kil-i',
+          'x-_-xos-kil-i',
+          'z-_-zey-kil-i',
+          'k-_-kow-kil-i',
+          'q-_-qey-kil-i',
+          'l-_-len-kil-i',
+          'y-_-yol-kil-i',
+          'm-a-_-me-mil-i',
+          'm-m-_-me-mil-me-kil-i',
+          'm-p-_-me-mil-pe-kil-i',
+          'm-tl-_-me-mi-tla-kil-i',
+          'm-x-_-me-mil-xo-kil-i',
+          'm-z-_-me-mil-ze-kil-i',
+          'm-k-_-me-mil-ko-kil-i',
+          'm-q-_-me-mil-qe-kil-i',
+          'm-l-_-me-mil-le-kil-i',
+          'm-y-_-me-mil-yo-kil-i',
+          'p-a-_-pe-mil-i',
+          'p-m-_-pe-mil-me-kil-i',
+          'p-p-_-p-e-mil-pe-kil-i',
+          'tl-a-_-tla-mil-i',
+          'x-a-_-xo-mil-i',
+          'm-a-a-_-me-pel-i',
+          'm-m-a-_-me-pel-me-mil-i',
+          'm-z-q-_-me-pel-ze-mil-qe-kil-i',
+          'p-a-a-_-pe-pel-i',
+          'tl-a-a-_-tla-pel-i',
+          'tl-l-x-_-tla-pel-le-mil-xo-kil-i',
+          'm-tlamilistli-a-a-a-_-me-tlal-i',
+          'm-tlamilistli-y-m-q-_-me-tlal-yo-pel-me-mil-qe-kil-i',
+          'm-tlamilistli-y-z-y-_-me-tlal-yo-pel-ze-mil-yo-kil-i',
+          'm-tlamilistli-y-y-l-_-me-tlal-yo-pel-yo-mil-le-kil-i'
       ];
       const largeNumbers = [
-          'q q tlamilistli k tl y _ q_e x__o__l q_e tl__a__l k_o p__e__l tl_a m__i__l y_o k__i__l i',
-          'q tl a tlamilistli y p y _ q_e z__e__l tl_a x__o__l m_e tl__a__l y_o p__e__l p_e m__i__l y_o k__i__l i',
-          'z m x tlamilistli m tl m tlamilistli y p y _ z_e l__e__l m_e q__e__l x_o k__o__l m_e z__e__l tl_a x__o__l m_e tl__a__l y_o p__e__l p_e m__i__l y_o k__i__l i',
-          'z tlamilistli a a a tlamilistli a a a tlamilistli a a a _ z_e y__o__l i',
-          'q a tlamilistli a a a tlamilistli a a a tlamilistli a a a _ q_e m_e m__i__z i',
-          'y a a tlamilistli a a a tlamilistli a a a tlamilistli a a a _ y_o m_e m__i__l m_e k__i__z i',
-          'tl_a tl_a p__e__l tl_a k__i__z i',
-          'z_e tl_a p__e__l tl_a k__i__z i'
+          'q-q-tlamilistli-k-tl-y-_-qe-xol-qe-tlal-ko-pel-tla-mil-yo-kil-i',
+          'q-tl-a-tlamilistli-y-p-y-_-qe-zel-tla-xol-me-tlal-yo-pel-pe-mil-yo-kil-i',
+          'z-m-x-tlamilistli-m-tl-m-tlamilistli-y-p-y-_-ze-lel-me-qel-xo-kol-me-zel-tla-xol-me-tlal-yo-pel-pe-mil-yo-kil-i',
+          'z-tlamilistli-a-a-a-tlamilistli-a-a-a-tlamilistli-a-a-a-_-ze-yol-i',
+          'q-a-tlamilistli-a-a-a-tlamilistli-a-a-a-tlamilistli-a-a-a-_-qe-me-miz-i',
+          'y-a-a-tlamilistli-a-a-a-tlamilistli-a-a-a-tlamilistli-a-a-a-_-yo-me-mil-me-kiz-i',
+          'tla-tla-pel-tla-kiz-i',
+          'ze-tla-pel-tla-kiz-i'
       ];
       const fractionalNumbers = [
-          'm tlanesemixnawalistli p _ m_e k__i__l x__e__l p_e k__i__l t__o__n',
-          'tl tlanesemixnawalistli x _ tl_a k__i__l x__e__l x_o k__i__l t__o__n',
-          'a tlanesemixnawalistli tl _ a k__i__l x__e__l tl_a k__i__l t__o__n',
-          'tl tlanesemixnawalistli l _ tl_a k__i__l x__e__l l_e k__i__l t__o__n',
-          'tl q tlanesemixnawalistli k tl _ tl_a m__i__l q_e k__i__l x__e__l k_o m__i__l tl_a k__i__l t__o__n'
+          'm-tlanesemixnawalistli-p-_-me-kil-xel-pe-kil-ton',
+          'tl-tlanesemixnawalistli-x-_-tla-kil-xel-xo-kil-ton',
+          'a-tlanesemixnawalistli-tl-_-a-kil-xel-tla-kil-ton',
+          'tl-tlanesemixnawalistli-l-_-tla-kil-xel-le-kil-ton',
+          'tl-q-tlanesemixnawalistli-k-tl-_-tla-mil-qe-kil-xel-ko-mil-tla-kil-ton'
       ];
       const greeting =
-          "n__i__l z_e mawkazalistli _ n_o t_o k_a _ tl_e n__e__x k_o y__o__tl _ r_a x__i__!_d zikoalistli1 _ i w__a__n _ n_i m_e! x_i' k_a tlamilistli";
+          "nil-ze-mawkazalistli-_-no-to-ka-_-tle-nex-ko-yotl-_-ra-xi!d-zikoalistli1-_-i-wan-_-ni-me!-xi'-ka-tlamilistli";
       const numbersHeader = document.querySelector('#numbersHeader');
       const xamixNumbersContainer = document.querySelector('#numbers');
       const xamixNumbers = document.querySelectorAll('#numbers>div>div>xamix-element');
 
       for (const xamix of xamixNumbers) {
           xamix.setAttribute('bold', '');
-          xamix.setAttribute('fontSize', '2');
+          xamix.setAttribute('fontSize', '2.5');
       }
 
       const largeNumbersHeader = document.querySelector('#largeNumbersHeader');
@@ -321,7 +325,7 @@
 
       for (const xamix of xamixLargeNumbers) {
           xamix.setAttribute('bold', '');
-          xamix.setAttribute('fontSize', '2');
+          xamix.setAttribute('fontSize', '2.5');
       }
 
       const fractionalNumbersHeader = document.querySelector('#fractionalNumbersHeader');
@@ -330,7 +334,7 @@
 
       for (const xamix of xamixFractionalNumbers) {
           xamix.setAttribute('bold', '');
-          xamix.setAttribute('fontSize', '2');
+          xamix.setAttribute('fontSize', '2.5');
       }
 
       const xamixGreetings = document.querySelectorAll('div.greeting>div>xamix-element');
@@ -492,7 +496,7 @@
       const timeouts = {};
 
       timeouts.numbers = setInterval(() => {
-          if (numbersUpdates >= xamixNumbers.length * 3) {
+          if (numbersUpdates >= 70) {
               xamixNumbersContainer.classList.toggle('hidden');
               numbersHeader
                   .addEventListener('click',
@@ -503,7 +507,7 @@
       }, 0);
 
       timeouts.largeNumbers = setInterval(() => {
-          if (largeNumbersUpdates >= xamixLargeNumbers.length * 3) {
+          if (largeNumbersUpdates >= 16) {
               xamixLargeNumbersContainer.classList.toggle('hidden');
               largeNumbersHeader
                   .addEventListener('click',
@@ -514,7 +518,7 @@
       }, 0);
 
       timeouts.fractionalNumbers = setInterval(() => {
-          if (fractionalNumbersUpdates >= xamixFractionalNumbers.length * 3) {
+          if (fractionalNumbersUpdates >= 10) {
               xamixFractionalNumbersContainer.classList.toggle('hidden');
               fractionalNumbersHeader
                   .addEventListener('click',
@@ -525,7 +529,7 @@
       }, 0);
 
       timeouts.greetings = setInterval(() => {
-          if (greetingsUpdates >= 56) {
+          if (greetingsUpdates >= 40) {
               horizontalGreetingsContainer.classList.toggle('hidden');
               verticalGreetingContainer.classList.toggle('hidden');
               horizontalGreetingHeader
