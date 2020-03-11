@@ -15,9 +15,19 @@ export default css`
   font-family: inherit;
 }
 
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.word > svg {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .text {
   direction: rtl;
-  font-family: Arial;
+  text-align: justify;
 }
 
 .columns {
@@ -40,7 +50,6 @@ div.columns > div {
   -ms-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
 }
-
 
 .latin {
   direction: ltr;
