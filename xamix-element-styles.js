@@ -23,6 +23,11 @@ export default css`
 .word > svg {
   display: inline-block;
   white-space: nowrap;
+  fill: currentColor;
+}
+
+.word > svg.space {
+  fill: transparent;
 }
 
 .text {
