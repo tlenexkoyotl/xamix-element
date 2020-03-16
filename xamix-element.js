@@ -25,6 +25,14 @@ class XamixElement extends LitElement {
         type: String,
         reflect: true
       },
+      backgroundColor: {
+        type: String,
+        reflect: true
+      },
+      fillColor: {
+        type: String,
+        reflect: true
+      },
       textInput: {
         type: String,
         reflect: true
@@ -41,6 +49,8 @@ class XamixElement extends LitElement {
   constructor() {
     super();
 
+    this.backgroundColor = 'transparent';
+    this.fillColor = 'currentColor';
     this.fontSize = 3;
     this.root = '.';
     this.adaptable = false;
@@ -193,7 +203,7 @@ class XamixElement extends LitElement {
     const clazz = `text${' ' + (this.vertical ? 'vertical' : 'horizontal')}`;
 
     return html`
-    <div class="${clazz}">
+    <div class="${clazz}" style="background-color: ${this.backgroundColor}; color: ${this.fillColor};">
         <slot name="before"></slot>
         ${this.textOutput}
         <slot name="after"></slot>
