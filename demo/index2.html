@@ -11,14 +11,9 @@
 </head>
 <body>
 <style>
-  .card {
-    padding: 10px;
-    color: #757575;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-    direction: rtl;
-    font-family: Arial;
+  body {
+    color: #ffffcc;
+    background-color: #191919;
   }
 
   .hidden {
@@ -41,18 +36,18 @@
     display: table-cell;
   }
 
-  xamix-element > span {
-    font-size: 2vw;
-    vertical-align: bottom;
+  .greeting > div > * {
+    vertical-align: top;
   }
 
-  xamix-element#numbersHeader, #largeNumbersHeader, #fractionalNumbersHeader, #horizontalGreetingHeader, #verticalGreetingHeader > span {
-    font-size: 1vw;
+  xamix-element > span {
+    color: #ffffcc;
+    font-size: 2vw;
     vertical-align: bottom;
   }
 </style>
 <div class="card">
-  <xamix-element id="numbersHeader" root=".." bold fontSize="5" textInput="tla-po-wal-tin">
+  <xamix-element id="numbersHeader" class="header" root=".." bold fontSize="5" textInput="tla-po-wal-tin">
     <span slot="after">Numbers</span>
   </xamix-element>
   <div id="numbers">
@@ -179,8 +174,7 @@
     </div>
   </div>
   <br>
-
-  <xamix-element id="horizontalGreetingHeader" root=".." bold fontSize="5"
+  <xamix-element id="horizontalGreetingHeader" class="header" root=".." bold fontSize="5"
                  textInput="mo-te-kak-tla-pa-lo-lis-tli">
     <span slot="after">Horizontal greeting</span>
   </xamix-element>
@@ -217,7 +211,7 @@
     </div>
   </div>
   <br>
-  <xamix-element id="verticalGreetingHeader" root=".." bold fontSize="5"
+  <xamix-element id="verticalGreetingHeader" class="header" root=".." bold fontSize="5"
                  textInput="tel-ke-za-ki-tla-pa-lo-lis-tli">
     <span slot="after">Vertical greeting</span>
   </xamix-element>
@@ -310,9 +304,14 @@
       ];
       const greeting =
           "nil-ze-mawkazalistli-_-no-to-ka-_-tle-nex-ko-yotl-_-ra-xi!d-zikoalistli1-_-i-wan-_-ni-me!-xi'-ka-tlamilistli";
+      const xamixElements = document.querySelectorAll('xamix-element');
       const numbersHeader = document.querySelector('#numbersHeader');
       const xamixNumbersContainer = document.querySelector('#numbers');
       const xamixNumbers = document.querySelectorAll('#numbers>div>div>xamix-element');
+
+
+      for (const xamix of xamixElements)
+          xamix.setAttribute('fillColor', '#ffffff');
 
       for (const xamix of xamixNumbers) {
           xamix.setAttribute('bold', '');
@@ -472,6 +471,7 @@
       for (const element of xamixGreetings)
           element.setAttribute('textInput', greeting);
 
+      const wordsResized = 'words-resized';
       let numbersUpdates = 0;
       let largeNumbersUpdates = 0;
       let fractionalNumbersUpdates = 0;
@@ -479,24 +479,24 @@
 
       for (const xamixNumber of xamixNumbers)
           xamixNumber
-              .addEventListener('update-done', () => numbersUpdates++);
+              .addEventListener(wordsResized, () => numbersUpdates++);
 
       for (const xamixNumber of xamixLargeNumbers)
           xamixNumber
-              .addEventListener('update-done', () => largeNumbersUpdates++);
+              .addEventListener(wordsResized, () => largeNumbersUpdates++);
 
       for (const xamixNumber of xamixFractionalNumbers)
           xamixNumber
-              .addEventListener('update-done', () => fractionalNumbersUpdates++);
+              .addEventListener(wordsResized, () => fractionalNumbersUpdates++);
 
       for (const xamixGreeting of xamixGreetings)
           xamixGreeting
-              .addEventListener('update-done', () => greetingsUpdates++);
+              .addEventListener(wordsResized, () => greetingsUpdates++);
 
       const timeouts = {};
 
       timeouts.numbers = setInterval(() => {
-          if (numbersUpdates >= 70) {
+          if (numbersUpdates === xamixNumbers.length) {
               xamixNumbersContainer.classList.toggle('hidden');
               numbersHeader
                   .addEventListener('click',
@@ -507,7 +507,7 @@
       }, 0);
 
       timeouts.largeNumbers = setInterval(() => {
-          if (largeNumbersUpdates >= 16) {
+          if (largeNumbersUpdates === xamixLargeNumbers.length) {
               xamixLargeNumbersContainer.classList.toggle('hidden');
               largeNumbersHeader
                   .addEventListener('click',
@@ -518,7 +518,7 @@
       }, 0);
 
       timeouts.fractionalNumbers = setInterval(() => {
-          if (fractionalNumbersUpdates >= 10) {
+          if (fractionalNumbersUpdates === fractionalNumbers.length) {
               xamixFractionalNumbersContainer.classList.toggle('hidden');
               fractionalNumbersHeader
                   .addEventListener('click',
@@ -529,7 +529,7 @@
       }, 0);
 
       timeouts.greetings = setInterval(() => {
-          if (greetingsUpdates >= 40) {
+          if (greetingsUpdates === xamixGreetings.length) {
               horizontalGreetingsContainer.classList.toggle('hidden');
               verticalGreetingContainer.classList.toggle('hidden');
               horizontalGreetingHeader
