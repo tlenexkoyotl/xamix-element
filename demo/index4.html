@@ -11,17 +11,16 @@
 </head>
 <body>
 <style>
+  body {
+    color: #ffffff;
+    background-color: #0b0614;
+  }
+
   .card {
-    color: #757575;
     border-radius: 5px;
-    background-color: #fff;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
     direction: rtl;
     font-family: Arial;
-  }
-
-  .hidden {
-    display: none;
   }
 
   div.container > div {
@@ -31,15 +30,6 @@
 
   div.body > xamix-element {
     margin-bottom: 5vh;
-  }
-
-  xamix-element > span {
-    font-size: 1vw;
-    vertical-align: top;
-  }
-
-  .top > * {
-    vertical-align: top;
   }
 </style>
 <div class="card">
@@ -54,7 +44,8 @@
     </div>
     <div class="body">
       <xamix-element root=".."
-                     textInput="i-ka _ i-nin _ a-mox-tli _ tik-pe-wal-ti-a' _ se _ we-yi _ a-mox-me-ka-yo-te-kitl _ i-to-ka' _ to-tla'-tol-_-tlamilistli-_ in _ sen-tetl _ a-mox-tli _ o-ki'-qi-lo' _ re-fukh-yo _ na-va _ na-va-_-tlamilistli-_ i-pan _ i-a-mox _ ye' _ ki-te-tla-po-wi-a _ i-ka _ tlax-kal-tlan _ na-wa-tla'-tol _ se-kin _ tla-man-tli _ tlen _ kin-pak-tis _ in _ ko-ne-zi-zin _ wan _ no-yo-ki _ in _ we-we-zi-zin-_-tlamilistli-_ i-nik _ o-mo-ciw _ i-nin _ te-kitl _ o-mo-sen-tla-li'-ke' _ in _ tla'-tol tla-mat-ke' _ tlen _ te-ki-ti' _ i-pan _ we-yi _ te-mac-til-kal-me' _ me!-xi'-ko _ wan _ po-lo!n-ya-_-tlamilistli-_ i-nin-ke' _ te-mac-ti'-ke' _ ki-ne-ki' _ tla-pa-le-wis-ke' _ i-nik _ in _ na-watl _ a'-mo _ mo-mi-ki-lis-_-zikoalistli1-_ ok-se-pa _ wel _ mo-ka-kis-_-tlamilistli"></xamix-element>
+                     textInput="i-ka _ i-nin _ a-mox-tli _ tik-pe-wal-ti-a' _ se _ we-yi _ a-mox-me-ka-yo-te-kitl _ i-to-ka' _ to-tla'-tol-_-tlamilistli-_ in _ sen-tetl _ a-mox-tli _ o-ki'-qi-lo' _ re-fukh-yo _ na-va _ na-va-_-tlamilistli-_ i-pan _ i-a-mox _ ye' _ ki-te-tla-po-wi-a _ i-ka _ tlax-kal-tlan _ na-wa-tla'-tol _ se-kin _ tla-man-tli _ tlen _ kin-pak-tis _ in _ ko-ne-zi-zin _ wan _ no-yo-ki _ in _ we-we-zi-zin-_-tlamilistli-_ i-nik _ o-mo-ciw _ i-nin _ te-kitl _ o-mo-sen-tla-li'-ke' _ in _ tla'-tol tla-mat-ke' _ tlen _ te-ki-ti' _ i-pan _ we-yi _ te-mac-til-kal-me' _ me!-xi'-ko _ wan _ po-lo!n-ya-_-tlamilistli-_ i-nin-ke' _ te-mac-ti'-ke' _ ki-ne-ki' _ tla-pa-le-wis-ke' _ i-nik _ in _ na-watl _ a'-mo _ mo-mi-ki-lis-_-zikoalistli1-_ ok-se-pa _ wel _ mo-ka-kis-_-tlamilistli">
+      </xamix-element>
       <xamix-element root=".."
                      textInput="i-pan _ i-nin _ a-mox-me-ka-yotl _ tik-ten-kix-tis-ke' _ no-ci _ in _ tlen _ in _ na-wa-tla'-tol-ke' _ ki-i'-qi-los-ke'-_-tlamilistli-_ a'-mo _ tik-ten-kix-tis-ke' _ san _ yen _ in _ tla-man-tli _ tlen _ kin-pak-ti-a _ in _ ko-ne-zi-zin-_-zikoalistli1-_ no-yo-ki _ ok-se-kin _ a-ma-me' _ tlen _ kin-po-was-ke' _ in _ zo-wa-zi-zin _ wan _ in _ tla-ka-zi-zin-_-tlamilistli-_ yo-kon _ ti-kil-wi-kix-tis-ke' _ i-nin _ tla'-tol-_-tlamilistli"></xamix-element>
       <xamix-element root=".."
@@ -68,6 +59,30 @@
       const xamixTitle = document.querySelectorAll('xamix-element.title');
       const xamixAuthor = document.querySelectorAll('xamix-element.author');
       const xamixBody = document.querySelectorAll('div.body>xamix-element');
+      const links = [
+          [
+              {
+                  wordsIndexes: [2, 3, 4],
+                  href: 'https://nah.wikipedia.org'
+              },
+              {
+                  wordsIndexes: [19, 20, 21],
+                  href: 'https://qu.wikipedia.org'
+              }
+          ],
+          [
+              {
+                  wordsIndexes: [2, 3, 4],
+                  href: 'https://ja.wikipedia.org'
+              }
+          ],
+          [
+              {
+                  wordsIndexes: [4, 5, 6],
+                  href: 'https://ko.wikipedia.org'
+              }
+          ]
+      ];
 
       for (const xamix of xamixBoldTexts)
           xamix.setAttribute('bold', '');
@@ -80,6 +95,9 @@
 
       for (const xamix of xamixBody)
           xamix.setAttribute('fontSize', '2');
+
+      xamixBody.forEach((body, index) =>
+          body.setAttribute('links', JSON.stringify(links[index])));
   </script>
 </div>
 </body>
