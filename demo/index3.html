@@ -11,10 +11,13 @@
 </head>
 <body>
 <style>
+  body {
+    color: #ffffff;
+    background-color: #0b0614;
+  }
+
   .card {
-    color: #757575;
     border-radius: 5px;
-    background-color: #fff;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
     direction: rtl;
     font-family: Arial;
@@ -74,18 +77,45 @@
       const xamixTitle = document.querySelectorAll('xamix-element.title');
       const xamixAuthor = document.querySelectorAll('xamix-element.author');
       const xamixBody = document.querySelectorAll('div.body>xamix-element');
+      const links = [
+          [
+              {
+                  wordsIndexes: [2, 3, 4],
+                  href: 'https://nah.wikipedia.org'
+              },
+              {
+                  wordsIndexes: [19, 20, 21],
+                  href: 'https://qu.wikipedia.org'
+              }
+          ],
+          [
+              {
+                  wordsIndexes: [2, 3, 4],
+                  href: 'https://ja.wikipedia.org'
+              }
+          ],
+          [
+              {
+                  wordsIndexes: [4, 5, 6],
+                  href: 'https://ko.wikipedia.org'
+              }
+          ]
+      ];
 
       for (const xamix of xamixBoldTexts)
           xamix.setAttribute('bold', '');
 
       for (const xamix of xamixTitle)
-          xamix.setAttribute('fontSize', '3.75');
+          xamix.setAttribute('fontSize', '5');
 
       for (const xamix of xamixAuthor)
-          xamix.setAttribute('fontSize', '2.5');
+          xamix.setAttribute('fontSize', '3');
 
       for (const xamix of xamixBody)
-          xamix.setAttribute('fontSize', '1.7');
+          xamix.setAttribute('fontSize', '2');
+
+      xamixBody.forEach((body, index) =>
+          body.setAttribute('links', JSON.stringify(links[index])));
   </script>
 </div>
 </body>
