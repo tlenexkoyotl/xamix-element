@@ -12,8 +12,11 @@
 <body>
 <style>
   body {
-    color: #ffffcc;
+    color: #ffffff;
+    --xamix-text-color: #ffffcc;
     background-color: #191919;
+    direction: rtl;
+    font-family: monospace;
   }
 
   .hidden {
@@ -24,12 +27,20 @@
     padding-left: 2vh;
   }
 
-  div#numbers > div.columns > div {
+  div#numbers > div.columns > div:first-child {
+    width: 13vw;
+  }
+
+  div#numbers > div.columns > div:nth-child(2) {
     width: 20vw;
   }
 
+  div#numbers > div.columns > div:nth-child(3) {
+    width: 25vw;
+  }
+
   div#numbers > div.columns > div:last-child {
-    width: 30vw;
+    width: 35vw;
   }
 
   .columns > * {
@@ -40,506 +51,684 @@
     vertical-align: top;
   }
 
-  xamix-element > span {
-    color: #ffffcc;
-    font-size: 2vw;
+  span {
+    color: #ffffff;
+    font-size: 1.5vw;
     vertical-align: bottom;
+  }
+
+  .header > xamix-element > span {
+    font-size: 2vw;
   }
 </style>
 <div class="card">
-  <xamix-element id="numbersHeader" class="header" root=".." bold fontSize="5" textInput="tla-po-wal-tin">
-    <span slot="after">Numbers</span>
-  </xamix-element>
-  <div id="numbers">
-    <div class="columns">
-      <div>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-      </div>
-      <div>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-      </div>
-      <div>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-      </div>
-      <div>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
-        <br>
-        <xamix-element root=".."></xamix-element>
+  <div id="allNumbers">
+    <xamix-element id="numbersHeader"
+                   class="header"
+                   bold
+                   textInput="tla-po-wal-tin">
+      <span slot="after">Numbers</span>
+    </xamix-element>
+    <div id="numbers">
+      <div class="columns">
+        <div>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+        </div>
+        <div>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+        </div>
+        <div>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+        </div>
+        <div>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+        </div>
       </div>
     </div>
-  </div>
-  <br>
-  <div>
-    <xamix-element id="largeNumbersHeader" root=".." bold fontSize="5"
+    <br>
+    <xamix-element id="largeNumbersHeader"
+                   bold
                    textInput="wey-tla-po-wal-tin">
       <span slot="after">Large Numbers</span>
     </xamix-element>
     <div id="largeNumbers">
       <div>
-        <xamix-element root=".."></xamix-element>
+        <xamix-element></xamix-element>
         <br>
-        <xamix-element root=".."></xamix-element>
+        <xamix-element></xamix-element>
         <br>
-        <xamix-element root=".."></xamix-element>
+        <xamix-element></xamix-element>
         <br>
-        <xamix-element root=".."></xamix-element>
+        <xamix-element></xamix-element>
         <br>
-        <xamix-element root=".."></xamix-element>
+        <xamix-element></xamix-element>
         <br>
-        <xamix-element root=".."></xamix-element>
+        <xamix-element></xamix-element>
         <br>
-        <xamix-element root=".."></xamix-element>
+        <xamix-element></xamix-element>
         <br>
-        <xamix-element root=".."></xamix-element>
+        <xamix-element></xamix-element>
       </div>
     </div>
     <br>
-    <xamix-element id="fractionalNumbersHeader" root=".." bold fontSize="5"
+    <xamix-element id="fractionalNumbersHeader"
+                   bold
                    textInput="xe-liw-tla-po-wal-tin">
       <span slot="after">Fractional Numbers</span>
     </xamix-element>
     <div id="fractionalNumbers">
-      <xamix-element root=".."></xamix-element>
+      <xamix-element></xamix-element>
       <br>
-      <xamix-element root=".."></xamix-element>
+      <xamix-element></xamix-element>
       <br>
-      <xamix-element root=".."></xamix-element>
+      <xamix-element></xamix-element>
       <br>
-      <xamix-element root=".."></xamix-element>
+      <xamix-element></xamix-element>
       <br>
-      <xamix-element root=".."></xamix-element>
-      <br>
+      <xamix-element></xamix-element>
     </div>
+    <br>
+    <xamix-element id="ordinalNumbersHeader"
+                   class="header"
+                   bold
+                   textInput="tla-sem-po-wa-lis-tin">
+      <span slot="after">Ordinal Numbers</span>
+    </xamix-element>
+    <div id="ordinalNumbers">
+      <div class="columns">
+        <div>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+        </div>
+        <div>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+        </div>
+        <div>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+        </div>
+        <div>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+          <br>
+          <xamix-element></xamix-element>
+        </div>
+      </div>
+    </div>
+    <br>
   </div>
-  <br>
-  <xamix-element id="horizontalGreetingHeader" class="header" root=".." bold fontSize="5"
-                 textInput="mo-te-kak-tla-pa-lo-lis-tli">
-    <span slot="after">Horizontal greeting</span>
-  </xamix-element>
-  <div id="horizontalGreeting" class="greeting">
-    <div>
-      <span>Font size: 5</span>
-      <br>
-      <xamix-element root=".." bold fontSize="5"></xamix-element>
-      <xamix-element root=".." fontSize="5"></xamix-element>
+  <div>
+    <xamix-element id="horizontalGreetingHeader"
+                   class="header"
+                   bold
+                   textInput="mo-te-kak-tla-pa-lo-lis-tli">
+      <span slot="after">Horizontal greeting</span>
+    </xamix-element>
+    <div id="horizontalGreeting" class="greeting">
+      <div>
+        <span>Font size: 5</span>
+        <br>
+        <xamix-element bold fontSize="5"></xamix-element>
+        <xamix-element fontSize="5"></xamix-element>
+      </div>
+      <div>
+        <span>Font size: 4</span>
+        <br>
+        <xamix-element bold fontSize="4"></xamix-element>
+        <xamix-element fontSize="4"></xamix-element>
+      </div>
+      <div>
+        <span>Font size: 3</span>
+        <br>
+        <xamix-element bold fontSize="3"></xamix-element>
+        <xamix-element fontSize="3"></xamix-element>
+      </div>
+      <div>
+        <span>Font size: 2</span>
+        <br>
+        <xamix-element bold fontSize="2"></xamix-element>
+        <xamix-element fontSize="2"></xamix-element>
+      </div>
+      <div>
+        <span>Font size: 1</span>
+        <br>
+        <xamix-element bold fontSize="1"></xamix-element>
+        <xamix-element fontSize="1"></xamix-element>
+      </div>
     </div>
-    <div>
-      <span>Font size: 4</span>
-      <br>
-      <xamix-element root=".." bold fontSize="4"></xamix-element>
-      <xamix-element root=".." fontSize="4"></xamix-element>
-    </div>
-    <div>
-      <span>Font size: 3</span>
-      <br>
-      <xamix-element root=".." bold fontSize="3"></xamix-element>
-      <xamix-element root=".." fontSize="3"></xamix-element>
-    </div>
-    <div>
-      <span>Font size: 2</span>
-      <br>
-      <xamix-element root=".." bold fontSize="2"></xamix-element>
-      <xamix-element root=".." fontSize="2"></xamix-element>
-    </div>
-    <div>
-      <span>Font size: 1</span>
-      <br>
-      <xamix-element root=".." bold fontSize="1"></xamix-element>
-      <xamix-element root=".." fontSize="1"></xamix-element>
-    </div>
-  </div>
-  <br>
-  <xamix-element id="verticalGreetingHeader" class="header" root=".." bold fontSize="5"
-                 textInput="tel-ke-za-ki-tla-pa-lo-lis-tli">
-    <span slot="after">Vertical greeting</span>
-  </xamix-element>
-  <div id="verticalGreeting" class="columns greeting">
-    <div>
-      <span>Font size: 5</span>
-      <br>
-      <xamix-element root=".." bold vertical fontSize="5"></xamix-element>
-      <xamix-element root=".." vertical fontSize="5"></xamix-element>
-    </div>
-    <div>
-      <span>Font size: 4</span>
-      <br>
-      <xamix-element root=".." bold vertical fontSize="4"></xamix-element>
-      <xamix-element root=".." vertical fontSize="4"></xamix-element>
-    </div>
-    <div>
-      <span>Font size: 3</span>
-      <br>
-      <xamix-element root=".." bold vertical fontSize="3"></xamix-element>
-      <xamix-element root=".." vertical fontSize="3"></xamix-element>
-    </div>
-    <div>
-      <span>Font size: 2</span>
-      <br>
-      <xamix-element root=".." bold vertical fontSize="2"></xamix-element>
-      <xamix-element root=".." vertical fontSize="2"></xamix-element>
-    </div>
-    <div>
-      <span>Font size: 1</span>
-      <br>
-      <xamix-element root=".." bold vertical fontSize="1"></xamix-element>
-      <xamix-element root=".." vertical fontSize="1"></xamix-element>
+    <br>
+    <xamix-element id="verticalGreetingHeader"
+                   class="header"
+                   bold
+                   textInput="tel-ke-za-ki-tla-pa-lo-lis-tli">
+      <span slot="after">Vertical greeting</span>
+    </xamix-element>
+    <div id="verticalGreeting" class="columns greeting">
+      <div>
+        <span>Font size: 5</span>
+        <br>
+        <xamix-element bold vertical fontSize="5"></xamix-element>
+        <xamix-element vertical fontSize="5"></xamix-element>
+      </div>
+      <div>
+        <span>Font size: 4</span>
+        <br>
+        <xamix-element bold vertical fontSize="4"></xamix-element>
+        <xamix-element vertical fontSize="4"></xamix-element>
+      </div>
+      <div>
+        <span>Font size: 3</span>
+        <br>
+        <xamix-element bold vertical fontSize="3"></xamix-element>
+        <xamix-element vertical fontSize="3"></xamix-element>
+      </div>
+      <div>
+        <span>Font size: 2</span>
+        <br>
+        <xamix-element bold vertical fontSize="2"></xamix-element>
+        <xamix-element vertical fontSize="2"></xamix-element>
+      </div>
+      <div>
+        <span>Font size: 1</span>
+        <br>
+        <xamix-element bold vertical fontSize="1"></xamix-element>
+        <xamix-element vertical fontSize="1"></xamix-element>
+      </div>
     </div>
   </div>
   <script>
-      const numbers = [
-          'a-_-ak-kil-i',
-          'm-_-men-kil-i',
-          'p-_-pek-kil-i',
-          'tl-_-tlac-kil-i',
-          'x-_-xos-kil-i',
-          'z-_-zey-kil-i',
-          'k-_-kow-kil-i',
-          'q-_-qey-kil-i',
-          'l-_-len-kil-i',
-          'y-_-yol-kil-i',
-          'm-a-_-me-mil-i',
-          'm-m-_-me-mil-me-kil-i',
-          'm-p-_-me-mil-pe-kil-i',
-          'm-tl-_-me-mi-tla-kil-i',
-          'm-x-_-me-mil-xo-kil-i',
-          'm-z-_-me-mil-ze-kil-i',
-          'm-k-_-me-mil-ko-kil-i',
-          'm-q-_-me-mil-qe-kil-i',
-          'm-l-_-me-mil-le-kil-i',
-          'm-y-_-me-mil-yo-kil-i',
-          'p-a-_-pe-mil-i',
-          'p-m-_-pe-mil-me-kil-i',
-          'p-p-_-p-e-mil-pe-kil-i',
-          'tl-a-_-tla-mil-i',
-          'x-a-_-xo-mil-i',
-          'm-a-a-_-me-pel-i',
-          'm-m-a-_-me-pel-me-mil-i',
-          'm-z-q-_-me-pel-ze-mil-qe-kil-i',
-          'p-a-a-_-pe-pel-i',
-          'tl-a-a-_-tla-pel-i',
-          'tl-l-x-_-tla-pel-le-mil-xo-kil-i',
-          'm-tlamilistli-a-a-a-_-me-tlal-i',
-          'm-tlamilistli-y-m-q-_-me-tlal-yo-pel-me-mil-qe-kil-i',
-          'm-tlamilistli-y-z-y-_-me-tlal-yo-pel-ze-mil-yo-kil-i',
-          'm-tlamilistli-y-y-l-_-me-tlal-yo-pel-yo-mil-le-kil-i'
-      ];
-      const largeNumbers = [
-          'q-q-tlamilistli-k-tl-y-_-qe-xol-qe-tlal-ko-pel-tla-mil-yo-kil-i',
-          'q-tl-a-tlamilistli-y-p-y-_-qe-zel-tla-xol-me-tlal-yo-pel-pe-mil-yo-kil-i',
-          'z-m-x-tlamilistli-m-tl-m-tlamilistli-y-p-y-_-ze-lel-me-qel-xo-kol-me-zel-tla-xol-me-tlal-yo-pel-pe-mil-yo-kil-i',
-          'z-tlamilistli-a-a-a-tlamilistli-a-a-a-tlamilistli-a-a-a-_-ze-yol-i',
-          'q-a-tlamilistli-a-a-a-tlamilistli-a-a-a-tlamilistli-a-a-a-_-qe-me-miz-i',
-          'y-a-a-tlamilistli-a-a-a-tlamilistli-a-a-a-tlamilistli-a-a-a-_-yo-me-mil-me-kiz-i',
-          'tla-tla-pel-tla-kiz-i',
-          'ze-tla-pel-tla-kiz-i'
-      ];
-      const fractionalNumbers = [
-          'm-tlanesemixnawalistli-p-_-me-kil-xel-pe-kil-ton',
-          'tl-tlanesemixnawalistli-x-_-tla-kil-xel-xo-kil-ton',
-          'a-tlanesemixnawalistli-tl-_-a-kil-xel-tla-kil-ton',
-          'tl-tlanesemixnawalistli-l-_-tla-kil-xel-le-kil-ton',
-          'tl-q-tlanesemixnawalistli-k-tl-_-tla-mil-qe-kil-xel-ko-mil-tla-kil-ton'
-      ];
-      const greeting =
-          "nil-ze-mawkazalistli-_-no-to-ka-_-tle-nex-ko-yotl-_-ra-xi!d-zikoalistli1-_-i-wan-_-ni-me!-xi'-ka-tlamilistli";
-      const xamixElements = document.querySelectorAll('xamix-element');
-      const numbersHeader = document.querySelector('#numbersHeader');
-      const xamixNumbersContainer = document.querySelector('#numbers');
-      const xamixNumbers = document.querySelectorAll('#numbers>div>div>xamix-element');
+      const xamixHeaders = document.querySelectorAll('xamix-element.header');
+      const wordsResized = 'words-resized';
+      const setUpXamixElementsRoot = () => {
+          const xamixElements = document.querySelectorAll('xamix-element');
 
+          for (const xamix of xamixElements)
+              xamix.setAttribute('root', '..');
+      };
+      const setUpGreetings = () => {
+          const timeouts = {};
+          const updates = {greetings: 0};
+          const greeting =
+              "nil-ze-mawkazalistli-_-no-to-ka-_-tle-nex-ko-yotl-_-ra-xi!d-zikoalistli1-_-i-wan-_-ni-me!-xi'-ka-tlamilistli";
+          const xamixGreetings = document.querySelectorAll('div.greeting>div>xamix-element');
 
-      for (const xamix of xamixElements)
-          xamix.setAttribute('fillColor', '#ffffff');
+          const horizontalGreetingHeader = document.querySelector('#horizontalGreetingHeader');
+          const horizontalGreetingsContainer = document.querySelector('#horizontalGreeting');
 
-      for (const xamix of xamixNumbers) {
-          xamix.setAttribute('bold', '');
-          xamix.setAttribute('fontSize', '2.5');
-      }
+          const verticalGreetingHeader = document.querySelector('#verticalGreetingHeader');
+          const verticalGreetingContainer = document.querySelector('#verticalGreeting');
 
-      const largeNumbersHeader = document.querySelector('#largeNumbersHeader');
-      const xamixLargeNumbersContainer = document.querySelector('#largeNumbers');
-      const xamixLargeNumbers = document.querySelectorAll('#largeNumbers>div>xamix-element');
+          for (const element of xamixGreetings)
+              element.setAttribute('textInput', greeting);
 
-      for (const xamix of xamixLargeNumbers) {
-          xamix.setAttribute('bold', '');
-          xamix.setAttribute('fontSize', '2.5');
-      }
+          for (const xamixGreeting of xamixGreetings)
+              xamixGreeting
+                  .addEventListener(wordsResized, () => updates.greetings++);
 
-      const fractionalNumbersHeader = document.querySelector('#fractionalNumbersHeader');
-      const xamixFractionalNumbersContainer = document.querySelector('#fractionalNumbers');
-      const xamixFractionalNumbers = document.querySelectorAll('#fractionalNumbers>xamix-element');
+          timeouts.greetings = setInterval(() => {
+              if (updates.greetings === xamixGreetings.length) {
+                  horizontalGreetingsContainer.classList.toggle('hidden');
+                  verticalGreetingContainer.classList.toggle('hidden');
+                  horizontalGreetingHeader
+                      .addEventListener('click', () =>
+                          horizontalGreetingsContainer.classList.toggle('hidden'));
+                  verticalGreetingHeader
+                      .addEventListener('click', () =>
+                          verticalGreetingContainer.classList.toggle('hidden'));
 
-      for (const xamix of xamixFractionalNumbers) {
-          xamix.setAttribute('bold', '');
-          xamix.setAttribute('fontSize', '2.5');
-      }
+                  clearInterval(timeouts.greetings);
+              }
+          }, 0)
+      };
+      const setUpAllNumbers = () => {
+          const timeouts = {};
+          const updates = {};
+          const numbers = [
+              'a-_-ak-kil-i',
+              'm-_-men-kil-i',
+              'p-_-pek-kil-i',
+              'tl-_-tlac-kil-i',
+              'x-_-xos-kil-i',
+              'z-_-zey-kil-i',
+              'k-_-kow-kil-i',
+              'q-_-qey-kil-i',
+              'l-_-len-kil-i',
+              'y-_-yol-kil-i',
+              'm-a-_-me-mil-i',
+              'm-m-_-me-mil-me-kil-i',
+              'm-p-_-me-mil-pe-kil-i',
+              'm-tl-_-me-mi-tla-kil-i',
+              'm-x-_-me-mil-xo-kil-i',
+              'm-z-_-me-mil-ze-kil-i',
+              'm-k-_-me-mil-ko-kil-i',
+              'm-q-_-me-mil-qe-kil-i',
+              'm-l-_-me-mil-le-kil-i',
+              'm-y-_-me-mil-yo-kil-i',
+              'p-a-_-pe-mil-i',
+              'p-m-_-pe-mil-me-kil-i',
+              'p-p-_-pe-mil-pe-kil-i',
+              'tl-a-_-tla-mil-i',
+              'x-a-_-xo-mil-i',
+              'm-a-a-_-me-pel-i',
+              'm-m-a-_-me-pel-me-mil-i',
+              'm-z-q-_-me-pel-ze-mil-qe-kil-i',
+              'p-a-a-_-pe-pel-i',
+              'tl-a-a-_-tla-pel-i',
+              'tl-l-x-_-tla-pel-le-mil-xo-kil-i',
+              'm-tlamilistli-a-a-a-_-me-tlal-i',
+              'm-tlamilistli-y-m-q-_-me-tlal-yo-pel-me-mil-qe-kil-i',
+              'm-tlamilistli-y-z-y-_-me-tlal-yo-pel-ze-mil-yo-kil-i',
+              'm-tlamilistli-y-y-l-_-me-tlal-yo-pel-yo-mil-le-kil-i',
+          ];
+          const largeNumbers = [
+              'q-q-tlamilistli-k-tl-y-_-qe-xol-qe-tlal-ko-pel-tla-mil-yo-kil-i',
+              'q-tl-a-tlamilistli-y-p-y-_-qe-zel-tla-xol-me-tlal-yo-pel-pe-mil-yo-kil-i',
+              'z-m-x-tlamilistli-m-tl-m-tlamilistli-y-p-y-_-ze-lel-me-qel-xo-kol-me-zel-tla-xol-me-tlal-yo-pel-pe-mil-yo-kil-i',
+              'z-tlamilistli-a-a-a-tlamilistli-a-a-a-tlamilistli-a-a-a-_-ze-yol-i',
+              'q-a-tlamilistli-a-a-a-tlamilistli-a-a-a-tlamilistli-a-a-a-_-qe-me-miz-i',
+              'y-a-a-tlamilistli-a-a-a-tlamilistli-a-a-a-tlamilistli-a-a-a-_-yo-me-mil-me-kiz-i',
+              'tla-tla-pel-tla-kiz-i',
+              'ze-tla-pel-tla-kiz-i'
+          ];
+          const fractionalNumbers = [
+              'm-tlanesemixnawalistli-p-_-me-kil-xel-pe-kil-ton',
+              'tl-tlanesemixnawalistli-x-_-tla-kil-xel-xo-kil-ton',
+              'a-tlanesemixnawalistli-tl-_-a-kil-xel-tla-kil-ton',
+              'tl-tlanesemixnawalistli-l-_-tla-kil-xel-le-kil-ton',
+              'tl-q-tlanesemixnawalistli-k-tl-_-tla-mil-qe-kil-xel-ko-mil-tla-kil-ton'
+          ];
+          const ordinalNumbers = [
+              'a-tik-_-ak-kil-tik',
+              'm-tik-_-men-kil-tik',
+              'p-tik-_-pek-kil-tik',
+              'tl-tik-_-tlac-kil-tik',
+              'x-tik-_-xos-kil-tik',
+              'z-tik-_-zey-kil-tik',
+              'k-tik-_-kow-kil-tik',
+              'q-tik-_-qey-kil-tik',
+              'l-tik-_-len-kil-tik',
+              'y-tik-_-yol-kil-tik',
+              'm-a-tik-_-me-mil-tik',
+              'm-m-tik-_-me-mil-me-kil-tik',
+              'm-p-tik-_-me-mil-pe-kil-tik',
+              'm-tl-tik-_-me-mi-tla-kil-tik',
+              'm-x-tik-_-me-mil-xo-kil-tik',
+              'm-z-tik-_-me-mil-ze-kil-tik',
+              'm-k-tik-_-me-mil-ko-kil-tik',
+              'm-q-tik-_-me-mil-qe-kil-tik',
+              'm-l-tik-_-me-mil-le-kil-tik',
+              'm-y-tik-_-me-mil-yo-kil-tik',
+              'p-a-tik-_-pe-mil-tik',
+              'p-m-tik-_-pe-mil-me-kil-tik',
+              'p-p-tik-_-pe-mil-pe-kil-tik',
+              'tl-a-tik-_-tla-mil-tik',
+              'x-a-tik-_-xo-mil-tik',
+              'm-a-a-tik-_-me-pel-tik',
+              'm-m-a-tik-_-me-pel-me-mil-tik',
+              'm-z-q-tik-_-me-pel-ze-mil-qe-kil-tik',
+              'p-a-a-tik-_-pe-pel-tik',
+              'tl-a-a-tik-_-tla-pel-tik',
+              'tl-l-x-tik-_-tla-pel-le-mil-xo-kil-tik',
+              'm-tlamilistli-a-a-a-tik-_-me-tlal-tik',
+              'm-tlamilistli-y-m-q-tik-_-me-tlal-yo-pel-me-mil-qe-kil-tik',
+              'm-tlamilistli-y-z-y-tik-_-me-tlal-yo-pel-ze-mil-yo-kil-tik',
+              'm-tlamilistli-y-y-l-tik-_-me-tlal-yo-pel-yo-mil-le-kil-tik',
+          ];
+          const numbersHeader = document.querySelector('#numbersHeader');
+          const xamixNumbersContainer = document.querySelector('#numbers');
+          const xamixAllNumbers = document.querySelectorAll(
+              '#allNumbers>div>div>div>xamix-element,' +
+              '#allNumbers>div>div>xamix-element,' +
+              '#allNumbers>div>xamix-element');
+          const setUpNumberSet = (setTextInputs, elements, header, container, name, numberCallback) => {
+              updates[name] = 0;
 
-      const xamixGreetings = document.querySelectorAll('div.greeting>div>xamix-element');
+              const number = (xamixNumbers, values, callback) => {
+                  for (let i = 0; i < elements.length; i++) {
+                      const span = document.createElement('span');
+                      span.innerHTML = callback(i);
 
-      const horizontalGreetingHeader = document.querySelector('#horizontalGreetingHeader');
-      const horizontalGreetingsContainer = document.querySelector('#horizontalGreeting');
+                      span.setAttribute('slot', 'before');
+                      xamixNumbers[i].setAttribute('textInput', values[i]);
+                      xamixNumbers[i].appendChild(span);
+                  }
+              };
 
-      const verticalGreetingHeader = document.querySelector('#verticalGreetingHeader');
-      const verticalGreetingContainer = document.querySelector('#verticalGreeting');
+              number(elements, setTextInputs, numberCallback);
 
-      const number = (xamixNumbers, values, init, end, callback = (i, offset) => {
-          return i + offset;
-      }, offset = 0) => {
-          for (let i = init; i < end; i++) {
-              const span = document.createElement('span');
-              span.innerHTML = callback(i, offset);
+              for (const element of elements)
+                  element.addEventListener(wordsResized, () => updates[name]++);
 
-              span.setAttribute('slot', 'before');
-              xamixNumbers[i].setAttribute('textInput', values[i + offset]);
-              xamixNumbers[i].appendChild(span);
+              timeouts[name] = setInterval(() => {
+                  if (updates[name] === elements.length) {
+                      container.classList.toggle('hidden');
+                      header.addEventListener('click', () => container.classList.toggle('hidden'));
+
+                      clearInterval(timeouts[name]);
+                  }
+              }, 0);
+          };
+
+          const xamixNumbers = document.querySelectorAll('#numbers>div>div>xamix-element');
+
+          for (const xamix of xamixAllNumbers) {
+              xamix.setAttribute('bold', '');
+              xamix.setAttribute('fontSize', '2.5');
           }
+
+          for (const xamix of xamixHeaders)
+              xamix.setAttribute('fontSize', '4');
+
+          const largeNumbersHeader = document.querySelector('#largeNumbersHeader');
+          const xamixLargeNumbersContainer = document.querySelector('#largeNumbers');
+          const xamixLargeNumbers = document.querySelectorAll('#largeNumbers>div>xamix-element');
+
+          const fractionalNumbersHeader = document.querySelector('#fractionalNumbersHeader');
+          const xamixFractionalNumbersContainer = document.querySelector('#fractionalNumbers');
+          const xamixFractionalNumbers = document.querySelectorAll('#fractionalNumbers>xamix-element');
+
+          const ordinalNumbersHeader = document.querySelector('#ordinalNumbersHeader');
+          const xamixOrdinalNumbersContainer = document.querySelector('#ordinalNumbers');
+          const xamixOrdinalNumbers = document.querySelectorAll('#ordinalNumbers>div>div>xamix-element');
+
+          setUpNumberSet(numbers,
+              xamixNumbers,
+              numbersHeader,
+              xamixNumbersContainer,
+              'numbers', (i) => {
+                  let result;
+
+                  switch (i) {
+                      case 23:
+                          result = 30;
+                          break;
+                      case 24:
+                          result = 40;
+                          break;
+                      case 25:
+                          result = 100;
+                          break;
+                      case 26:
+                          result = 110;
+                          break;
+                      case 27:
+                          result = 157;
+                          break;
+                      case 28:
+                          result = 200;
+                          break;
+                      case 29:
+                          result = 300;
+                          break;
+                      case 30:
+                          result = 384;
+                          break;
+                      case 31:
+                          result = 1000;
+                          break;
+                      case 32:
+                          result = 1917;
+                          break;
+                      case 33:
+                          result = 1959;
+                          break;
+                      case 34:
+                          result = 1998;
+                          break;
+                      default :
+                          result = i;
+                          break;
+                  }
+
+                  return `${result}/`;
+              });
+
+          setUpNumberSet(largeNumbers,
+              xamixLargeNumbers,
+              largeNumbersHeader,
+              xamixLargeNumbersContainer,
+              'large', (i) => {
+                  let result;
+
+                  switch (i + 35) {
+                      case 35:
+                          result = '77,639';
+                          break;
+                      case 36:
+                          result = '731,929';
+                          break;
+                      case 37:
+                          result = '514,131,929';
+                          break;
+                      case 38:
+                          result = '5e9';
+                          break;
+                      case 39:
+                          result = '7e10';
+                          break;
+                      case 40:
+                          result = '9e11';
+                          break;
+                      case 41:
+                          result = '3e303';
+                          break;
+                      case 42:
+                          result = '5e303';
+                          break;
+                      default :
+                          result = i;
+                          break;
+                  }
+
+                  return `${result}/`;
+              });
+
+          setUpNumberSet(fractionalNumbers,
+              xamixFractionalNumbers,
+              fractionalNumbersHeader,
+              xamixFractionalNumbersContainer,
+              'fractional', (i) => {
+                  let result;
+
+                  switch (i + 43) {
+                      case 43:
+                          result = '½';
+                          break;
+                      case 44:
+                          result = '¾';
+                          break;
+                      case 45:
+                          result = '↉';
+                          break;
+                      case 46:
+                          result = '⅜';
+                          break;
+                      case 47:
+                          result = '37:63';
+                          break;
+                      default :
+                          result = i;
+                          break;
+                  }
+
+                  return `${result}/`;
+              });
+
+          setUpNumberSet(ordinalNumbers,
+              xamixOrdinalNumbers,
+              ordinalNumbersHeader,
+              xamixOrdinalNumbersContainer,
+              'ordinal', (i) => {
+                  let result;
+
+                  switch (i) {
+                      case 23:
+                          result = 30;
+                          break;
+                      case 24:
+                          result = 40;
+                          break;
+                      case 25:
+                          result = 100;
+                          break;
+                      case 26:
+                          result = 110;
+                          break;
+                      case 27:
+                          result = 157;
+                          break;
+                      case 28:
+                          result = 200;
+                          break;
+                      case 29:
+                          result = 300;
+                          break;
+                      case 30:
+                          result = 384;
+                          break;
+                      case 31:
+                          result = 1000;
+                          break;
+                      case 32:
+                          result = 1917;
+                          break;
+                      case 33:
+                          result = 1959;
+                          break;
+                      case 34:
+                          result = 1998;
+                          break;
+                      default :
+                          result = i;
+                          break;
+                  }
+
+                  return `${result}°/`;
+              });
       };
 
-      number(xamixNumbers, numbers, 0, xamixNumbers.length, (i, offset) => {
-          let result;
-
-          switch (i + offset) {
-              case 23:
-                  result = 30;
-                  break;
-              case 24:
-                  result = 40;
-                  break;
-              case 25:
-                  result = 100;
-                  break;
-              case 26:
-                  result = 110;
-                  break;
-              case 27:
-                  result = 157;
-                  break;
-              case 28:
-                  result = 200;
-                  break;
-              case 29:
-                  result = 300;
-                  break;
-              case 30:
-                  result = 384;
-                  break;
-              case 31:
-                  result = 1000;
-                  break;
-              case 32:
-                  result = 1917;
-                  break;
-              case 33:
-                  result = 1959;
-                  break;
-              case 34:
-                  result = 1998;
-                  break;
-              default :
-                  result = i + offset;
-                  break;
-          }
-
-          return `${result}/`;
-      });
-
-      number(xamixLargeNumbers, largeNumbers, 0, xamixLargeNumbers.length, (i, offset) => {
-          let result;
-
-          switch (i + offset + 35) {
-              case 35:
-                  result = '77,639';
-                  break;
-              case 36:
-                  result = '731,929';
-                  break;
-              case 37:
-                  result = '514,131,929';
-                  break;
-              case 38:
-                  result = '5e9';
-                  break;
-              case 39:
-                  result = '7e10';
-                  break;
-              case 40:
-                  result = '9e11';
-                  break;
-              case 41:
-                  result = '3e303';
-                  break;
-              case 42:
-                  result = '5e303';
-                  break;
-              default :
-                  result = i + offset;
-                  break;
-          }
-
-          return `${result}/`;
-      });
-
-      number(xamixFractionalNumbers, fractionalNumbers, 0, xamixFractionalNumbers.length, (i, offset) => {
-          let result;
-
-          switch (i + offset + 43) {
-              case 43:
-                  result = '½';
-                  break;
-              case 44:
-                  result = '¾';
-                  break;
-              case 45:
-                  result = '↉';
-                  break;
-              case 46:
-                  result = '⅜';
-                  break;
-              case 47:
-                  result = '37:63';
-                  break;
-              default :
-                  result = i + offset;
-                  break;
-          }
-
-          return `${result}/`;
-      });
-
-      for (const element of xamixGreetings)
-          element.setAttribute('textInput', greeting);
-
-      const wordsResized = 'words-resized';
-      let numbersUpdates = 0;
-      let largeNumbersUpdates = 0;
-      let fractionalNumbersUpdates = 0;
-      let greetingsUpdates = 0;
-
-      for (const xamixNumber of xamixNumbers)
-          xamixNumber
-              .addEventListener(wordsResized, () => numbersUpdates++);
-
-      for (const xamixNumber of xamixLargeNumbers)
-          xamixNumber
-              .addEventListener(wordsResized, () => largeNumbersUpdates++);
-
-      for (const xamixNumber of xamixFractionalNumbers)
-          xamixNumber
-              .addEventListener(wordsResized, () => fractionalNumbersUpdates++);
-
-      for (const xamixGreeting of xamixGreetings)
-          xamixGreeting
-              .addEventListener(wordsResized, () => greetingsUpdates++);
-
-      const timeouts = {};
-
-      timeouts.numbers = setInterval(() => {
-          if (numbersUpdates === xamixNumbers.length) {
-              xamixNumbersContainer.classList.toggle('hidden');
-              numbersHeader
-                  .addEventListener('click',
-                      () => xamixNumbersContainer.classList.toggle('hidden'));
-
-              clearInterval(timeouts.numbers);
-          }
-      }, 0);
-
-      timeouts.largeNumbers = setInterval(() => {
-          if (largeNumbersUpdates === xamixLargeNumbers.length) {
-              xamixLargeNumbersContainer.classList.toggle('hidden');
-              largeNumbersHeader
-                  .addEventListener('click',
-                      () => xamixLargeNumbersContainer.classList.toggle('hidden'));
-
-              clearInterval(timeouts.largeNumbers);
-          }
-      }, 0);
-
-      timeouts.fractionalNumbers = setInterval(() => {
-          if (fractionalNumbersUpdates === fractionalNumbers.length) {
-              xamixFractionalNumbersContainer.classList.toggle('hidden');
-              fractionalNumbersHeader
-                  .addEventListener('click',
-                      () => xamixFractionalNumbersContainer.classList.toggle('hidden'));
-
-              clearInterval(timeouts.fractionalNumbers);
-          }
-      }, 0);
-
-      timeouts.greetings = setInterval(() => {
-          if (greetingsUpdates === xamixGreetings.length) {
-              horizontalGreetingsContainer.classList.toggle('hidden');
-              verticalGreetingContainer.classList.toggle('hidden');
-              horizontalGreetingHeader
-                  .addEventListener('click', () => horizontalGreetingsContainer.classList.toggle('hidden'));
-              verticalGreetingHeader
-                  .addEventListener('click', () => verticalGreetingContainer.classList.toggle('hidden'));
-
-              clearInterval(timeouts.greetings);
-          }
-      }, 0);
+      setUpXamixElementsRoot();
+      setUpAllNumbers();
+      setUpGreetings();
   </script>
 </div>
 </body>
