@@ -25,14 +25,6 @@ class XamixElement extends LitElement {
         type: String,
         reflect: true
       },
-      backgroundColor: {
-        type: String,
-        reflect: true
-      },
-      fillColor: {
-        type: String,
-        reflect: true
-      },
       textInput: {
         type: String,
         reflect: true
@@ -54,8 +46,6 @@ class XamixElement extends LitElement {
   constructor() {
     super();
 
-    this.backgroundColor = 'transparent';
-    this.fillColor = 'currentColor';
     this.fontSize = 3;
     this.root = '.';
     this.adaptable = false;
@@ -220,6 +210,8 @@ class XamixElement extends LitElement {
       word.content.appendChild(syllable);
 
     word.content.classList.toggle('word');
+
+    word.content.id = word.word.replace(/-/g, '');
     this.useWordAsLink(word, index);
   }
 
@@ -290,9 +282,10 @@ class XamixElement extends LitElement {
     this.convertInput();
 
     const clazz = `text${' ' + (this.vertical ? 'vertical' : 'horizontal')}`;
+    const style = `--xamix-text-line-height: ${this.fontSize}${this.getUnit()};`;
 
     return html`
-      <div class="${clazz}" style="background-color: ${this.backgroundColor}; color: ${this.fillColor}; line-height: ${this.fontSize}${this.getUnit()};">
+      <div class="${clazz}" style="${style}">
           <slot name="before"></slot>
           ${this.textOutput}
           <slot name="after"></slot>
