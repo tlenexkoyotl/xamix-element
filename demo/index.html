@@ -15,18 +15,27 @@
     color: #ffffff;
     background-color: #0b0614;
     direction: rtl;
+    --xamix-link-unvisited-color: #0088cc;
+    --xamix-link-visited-color: #ae7dff;
+    --xamix-link-hover-color: #ff00ff;
+    --xamix-link-active-color: #ccffff;
+  }
+
+  .ugly {
+    --xamix-columns-direction: rtl;
+    --xamix-columns-div-display: none;
+    --xamix-word-background-color: #003030;
+    --xamix-text-background-color: #303000;
+    --xamix-word-space-background-color: #00a000;
+    --xamix-space-color: #cc6600;
+    --xamix-vertical-writing-mode: vertical-lr;
   }
 
   div.main > div {
-    display: table-cell;
     width: 50vw;
   }
 
-  div.columns {
-    text-align: right;
-  }
-
-  div.columns.top.body > xamix-element {
+  div.columns.body > xamix-element {
     max-height: 60vw;
   }
 
@@ -40,7 +49,7 @@
 
   .header {
     text-align: center;
-    color: #ff0000;
+    --xamix-text-color: #ff0000;
   }
 
   div.body.horizontal > xamix-element {
@@ -92,11 +101,38 @@
       </div>
     </div>
   </div>
+  <button id="styleVarsToggle">Toggle style vars</button>
   <script>
       const xamixBoldTexts = document.querySelectorAll('xamix-element');
       const xamixTitle = document.querySelectorAll('xamix-element.title');
       const xamixAuthor = document.querySelectorAll('xamix-element.author');
       const xamixBody = document.querySelectorAll('div.body>xamix-element');
+      const links = [
+          [
+              {
+                  wordsIndexes: [2, 3, 4],
+                  href: 'https://nah.wikipedia.org'
+              },
+              {
+                  wordsIndexes: [19, 20, 21],
+                  href: 'https://qu.wikipedia.org'
+              }
+          ],
+          [
+              {
+                  wordsIndexes: [2, 3, 4],
+                  href: 'https://ja.wikipedia.org'
+              }
+          ],
+          [
+              {
+                  wordsIndexes: [4, 5, 6],
+                  href: 'https://ko.wikipedia.org'
+              }
+          ]
+      ];
+      const xamixVerticalBody = document.querySelectorAll('div.columns.body>xamix-element');
+      const xamixHorizontalBody = document.querySelectorAll('div.horizontal.body>xamix-element');
 
       for (const xamix of xamixBoldTexts)
           xamix.setAttribute('bold', '');
@@ -109,6 +145,16 @@
 
       for (const xamix of xamixBody)
           xamix.setAttribute('fontSize', '1.75');
+
+      xamixVerticalBody.forEach((body, index) =>
+          body.setAttribute('links', JSON.stringify(links[index])));
+
+      xamixHorizontalBody.forEach((body, index) =>
+          body.setAttribute('links', JSON.stringify(links[index])));
+
+      document.querySelector('#styleVarsToggle')
+          .addEventListener('click', () =>
+              document.querySelector('body').classList.toggle('ugly'));
   </script>
 </div>
 </body>
