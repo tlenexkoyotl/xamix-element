@@ -14,48 +14,29 @@
   body {
     color: #ffffff;
     background-color: #0b0614;
-  }
-
-  .card {
-    border-radius: 5px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
     direction: rtl;
-    font-family: Arial;
-  }
-
-  .hidden {
-    display: none;
+    --xamix-link-unvisited-color: #0088cc;
+    --xamix-link-visited-color: #ae7dff;
+    --xamix-link-hover-color: #ff00ff;
+    --xamix-link-active-color: #ccffff;
   }
 
   .columns > * {
     display: table-cell;
   }
 
-  xamix-element > span {
-    font-size: 1vh;
-    vertical-align: top;
+  xamix-element {
+    max-height: 70vh;
+    padding-left: 2vw;
   }
 
   .top > * {
     vertical-align: top;
   }
-
-  #xamix > div {
-    height: 80vh;
-  }
-
-  .header {
-    max-width: 30vw;
-  }
-
-  .body {
-    max-width: 70vw;
-    max-height: 70vh;
-  }
 </style>
-<div class="card">
+<div>
   <div id="xamix" class="columns top">
-    <div class="columns header">
+    <div class="columns header top">
       <xamix-element class="title" root=".." vertical
                      textInput="ma-lin-zin _ i-tla'-tol"></xamix-element>
       <xamix-element class="top author" root=".." vertical
