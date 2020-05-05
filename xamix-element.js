@@ -143,13 +143,19 @@ class XamixElement extends LitElement {
     const template = document.createElement('span');
     template.innerHTML = `${content}`;
 
-    return [...textOutput, template.children[0]];
+    if (template.children.length > 0)
+      return [...textOutput, template.children[0]];
+
+    return [...textOutput, template];
   }
 
   fetchSvg(fileName) {
-    return fetch(`${this.root}/data/${this.bold ? 'bold' : 'regular'}/${fileName}.svg`,
+    const filePath = `${this.root}/data/` +
+      `${this.bold ? 'bold' : 'regular'}/${fileName}.svg`;
+
+    return fetch(filePath,
       {mode: 'no-cors'})
-      .then(file => file.text())
+      .then(file => file.status === 200 ? file.text() : fileName);
   }
 
   parseText() {
@@ -185,6 +191,15 @@ class XamixElement extends LitElement {
   fetchSyllables() {
     Promise.all(this.uniqueCharacters.map(char => char.file))
       .then((files) => {
+        files = files.map((file, index) => {
+          if (file.includes('ENOENT')) {
+            const unique = this.uniqueCharacters[index];
+            unique.file = unique.name;
+          }
+
+          return file;
+        });
+
         this.setUniqueCharactersContent(files);
         this.formTextOutput();
       });
@@ -286,9 +301,9 @@ class XamixElement extends LitElement {
 
     return html`
       <div class="${clazz}" style="${style}">
-          <slot name="before"></slot>
-          ${this.textOutput}
-          <slot name="after"></slot>
+        <slot name="before"></slot>
+        ${this.textOutput}
+        <slot name="after"></slot>
       </div>
       `;
   }
