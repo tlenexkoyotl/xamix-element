@@ -32,6 +32,10 @@ xamix-element {
   max-height: var(--xamix-element-max-height, none);
 }
 
+i {
+  color: var(--xamix-italic-color, currentColor);
+}
+
 a {
   color: var(--xamix-link-color, #0000ff);
 }
