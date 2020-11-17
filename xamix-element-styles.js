@@ -25,6 +25,8 @@ export default css`
   display: var(--xamix-syllable-display, inline-block);
   white-space: var(--xamix-syllable-white-space, nowrap);
   fill: var(--xamix-text-color, currentColor);
+  stroke: var(--xamix-text-stroke, transparent);
+  stroke-width: var(--xamix-text-stroke-width, 0);
 }
 
 xamix-element {
